@@ -78,14 +78,14 @@ npm run build
 npm start
 ```
 
-## Deployment
+## deployment
 
-### Deploy to Vercel
+### deploy to vercel
 
-1. Push your code to GitHub
-2. Import your repository on [Vercel](https://vercel.com)
-3. Connect your domain (meryamakhundova.com) in Vercel settings
-4. Deploy!
+1. push your code to GitHub
+2. import your repository on [Vercel](https://vercel.com)
+3. connect your domain in Vercel settings
+4. deploy
 
 ## project structure
 
