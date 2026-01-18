@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Website
+
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- 🎨 Modern, clean design with dark mode support
+- 📱 Fully responsive across all devices
+- ⚡ Fast performance with Next.js
+- 🎯 SEO optimized
+- 🚀 Easy to customize and deploy
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ and npm
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization
 
-## Learn More
+### Adding Your Projects
 
-To learn more about Next.js, take a look at the following resources:
+Edit `lib/data.ts` and add your projects to the `projects` array:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```typescript
+{
+  id: "project-1",
+  title: "Project Name",
+  description: "Short description",
+  longDescription: "Longer description",
+  technologies: ["React", "TypeScript"],
+  imageUrl: "/projects/project1.png", // Place images in public/projects/
+  githubUrl: "https://github.com/yourusername/project",
+  liveUrl: "https://project-demo.com",
+  featured: true,
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Adding Your Experience
 
-## Deploy on Vercel
+Add your experiences to the `experiences` array in `lib/data.ts`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```typescript
+{
+  id: "exp-1",
+  title: "Software Developer Intern",
+  company: "Company Name",
+  location: "Location",
+  period: "May 2024 - Aug 2024",
+  description: [
+    "Description point 1",
+    "Description point 2",
+  ],
+  technologies: ["React", "TypeScript"],
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Updating Social Links
+
+Update the `socialLinks` object in `lib/data.ts` with your actual links:
+
+```typescript
+export const socialLinks = {
+  github: "https://github.com/yourusername",
+  linkedin: "https://linkedin.com/in/yourusername",
+  email: "mailto:your.email@example.com",
+};
+```
+
+### Adding Project Images
+
+1. Place your project images in the `public/projects/` directory
+2. Reference them in your project data using `/projects/filename.png`
+
+## Building for Production
+
+```bash
+npm run build
+npm start
+```
+
+## Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Connect your domain (meryamakhundova.com) in Vercel settings
+4. Deploy!
+
+### Deploy to Other Platforms
+
+This is a static Next.js site, so it can be deployed to:
+- Netlify
+- GitHub Pages
+- Any static hosting service
+
+## Project Structure
+
+```
+personal-website/
+├── app/
+│   ├── layout.tsx      # Root layout with metadata
+│   ├── page.tsx        # Main page with all sections
+│   └── globals.css     # Global styles
+├── components/
+│   ├── Navigation.tsx  # Navigation bar
+│   ├── Hero.tsx        # Hero/landing section
+│   ├── About.tsx       # About section
+│   ├── Projects.tsx    # Projects showcase
+│   ├── Experience.tsx  # Experience timeline
+│   ├── Contact.tsx     # Contact section
+│   └── Footer.tsx      # Footer
+├── lib/
+│   └── data.ts         # Projects, experience, and skills data
+└── public/
+    └── projects/       # Project images
+```
+
+## Customization Tips
+
+- Update colors in `app/globals.css` or use Tailwind classes
+- Modify component styles in individual component files
+- Add new sections by creating new components and adding them to `app/page.tsx`
+- Update metadata in `app/layout.tsx` for better SEO
+
+## License
+
+This project is open source and available for personal use.
