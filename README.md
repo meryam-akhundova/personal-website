@@ -1,40 +1,30 @@
-# Personal Portfolio Website
+# personal portfolio website
 
-A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+built with Next.js, TypeScript, and Tailwind CSS
 
-## Features
-
-- 🎨 Modern, clean design with dark mode support
-- 📱 Fully responsive across all devices
-- ⚡ Fast performance with Next.js
-- 🎯 SEO optimized
-- 🚀 Easy to customize and deploy
-
-## Getting Started
-
-### Prerequisites
+### prerequisites
 
 - Node.js 18+ and npm
 
-### Installation
+### installation
 
-1. Install dependencies:
+1. install dependencies:
 ```bash
 npm install
 ```
 
-2. Run the development server:
+2. run the development server:
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+3. open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Customization
+## customization
 
-### Adding Your Projects
+### adding your projects
 
-Edit `lib/data.ts` and add your projects to the `projects` array:
+edit `lib/data.ts` and add your projects to the `projects` array:
 
 ```typescript
 {
@@ -50,9 +40,9 @@ Edit `lib/data.ts` and add your projects to the `projects` array:
 }
 ```
 
-### Adding Your Experience
+### adding your experience
 
-Add your experiences to the `experiences` array in `lib/data.ts`:
+add your experiences to the `experiences` array in `lib/data.ts`:
 
 ```typescript
 {
@@ -69,9 +59,9 @@ Add your experiences to the `experiences` array in `lib/data.ts`:
 }
 ```
 
-### Updating Social Links
+### updating social Links
 
-Update the `socialLinks` object in `lib/data.ts` with your actual links:
+update the `socialLinks` object in `lib/data.ts` with your actual links:
 
 ```typescript
 export const socialLinks = {
@@ -81,63 +71,40 @@ export const socialLinks = {
 };
 ```
 
-### Adding Project Images
-
-1. Place your project images in the `public/projects/` directory
-2. Reference them in your project data using `/projects/filename.png`
-
-## Building for Production
+## building for production
 
 ```bash
 npm run build
 npm start
 ```
 
-## Deployment
+## deployment
 
-### Deploy to Vercel (Recommended)
+### deploy to vercel
 
-1. Push your code to GitHub
-2. Import your repository on [Vercel](https://vercel.com)
-3. Connect your domain (meryamakhundova.com) in Vercel settings
-4. Deploy!
+1. push your code to GitHub
+2. import your repository on [Vercel](https://vercel.com)
+3. connect your domain in Vercel settings
+4. deploy
 
-### Deploy to Other Platforms
-
-This is a static Next.js site, so it can be deployed to:
-- Netlify
-- GitHub Pages
-- Any static hosting service
-
-## Project Structure
+## project structure
 
 ```
 personal-website/
 ├── app/
-│   ├── layout.tsx      # Root layout with metadata
-│   ├── page.tsx        # Main page with all sections
-│   └── globals.css     # Global styles
+│   ├── layout.tsx      # root layout with metadata
+│   ├── page.tsx        # main page with all sections
+│   └── globals.css     # global styles
 ├── components/
-│   ├── Navigation.tsx  # Navigation bar
-│   ├── Hero.tsx        # Hero/landing section
-│   ├── About.tsx       # About section
-│   ├── Projects.tsx    # Projects showcase
-│   ├── Experience.tsx  # Experience timeline
-│   ├── Contact.tsx     # Contact section
-│   └── Footer.tsx      # Footer
+│   ├── Navigation.tsx  # navigation bar
+│   ├── Hero.tsx        # landing section
+│   ├── About.tsx       # about section
+│   ├── Projects.tsx    # projects showcase
+│   ├── Experience.tsx  # experience timeline
+│   ├── Contact.tsx     # contact section
+│   └── Footer.tsx      # footer
 ├── lib/
-│   └── data.ts         # Projects, experience, and skills data
+│   └── data.ts         # projects, experience, and skills data
 └── public/
-    └── projects/       # Project images
+    └── projects/       # project images
 ```
-
-## Customization Tips
-
-- Update colors in `app/globals.css` or use Tailwind classes
-- Modify component styles in individual component files
-- Add new sections by creating new components and adding them to `app/page.tsx`
-- Update metadata in `app/layout.tsx` for better SEO
-
-## License
-
-This project is open source and available for personal use.
