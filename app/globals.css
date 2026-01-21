@@ -14,7 +14,7 @@
 
 /* Custom cursor - hidden default cursor, using JavaScript component */
 body {
-  background: linear-gradient(135deg, #FCEACA 0%, #FFF9C4 20%, #FBD9CD 40%, #D4DCD1 60%, #F1BC52 80%, #FCEACA 100%);
+  background: linear-gradient(135deg, #FFE4B5 0%, #FFF59D 20%, #FFB3D9 40%, #FFB88C 60%, #FFD93D 80%, #FFE4B5 100%);
   background-size: 400% 400%;
   animation: gradientShift 12s ease infinite;
   color: var(--foreground);
@@ -113,11 +113,11 @@ body {
 /* Hero section vibrant gradient background */
 .hero-gradient {
   background: 
-    radial-gradient(circle at 20% 50%, #FBD9CD 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, #D4DCD1 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, #FFF9C4 0%, transparent 50%),
+    radial-gradient(circle at 20% 50%, #FFB3D9 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, #FFB88C 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, #FFF59D 0%, transparent 50%),
     radial-gradient(circle at 60% 30%, #DB5079 0%, transparent 40%),
-    linear-gradient(135deg, #FCEACA 0%, #FFF9C4 25%, #FBD9CD 50%, #D4DCD1 75%, #FCEACA 100%);
+    linear-gradient(135deg, #FFE4B5 0%, #FFF59D 25%, #FFB3D9 50%, #FFB88C 75%, #FFE4B5 100%);
   background-size: 400% 400%;
   animation: heroGradientShift 5s ease infinite;
 }
@@ -137,13 +137,13 @@ body {
 
 /* Color scheme button styles with depth */
 .btn-primary {
-  background: linear-gradient(135deg, #543618 0%, #6B4A28 100%);
+  background: linear-gradient(135deg, #DB5079 0%, #C03D66 100%);
   color: #ffffff;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 4px 6px -1px rgba(84, 54, 24, 0.3),
-    0 2px 4px -1px rgba(84, 54, 24, 0.2),
-    0 0 0 1px rgba(84, 54, 24, 0.1) inset;
+    0 4px 6px -1px rgba(219, 80, 121, 0.3),
+    0 2px 4px -1px rgba(219, 80, 121, 0.2),
+    0 0 0 1px rgba(219, 80, 121, 0.1) inset;
   position: relative;
   overflow: hidden;
 }
@@ -164,39 +164,39 @@ body {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #6B4A28 0%, #543618 100%);
+  background: linear-gradient(135deg, #C03D66 0%, #DB5079 100%);
   transform: translateY(-2px);
   box-shadow: 
-    0 8px 12px -2px rgba(84, 54, 24, 0.4),
-    0 4px 6px -1px rgba(84, 54, 24, 0.3),
-    0 0 0 1px rgba(84, 54, 24, 0.2) inset;
+    0 8px 12px -2px rgba(219, 80, 121, 0.4),
+    0 4px 6px -1px rgba(219, 80, 121, 0.3),
+    0 0 0 1px rgba(219, 80, 121, 0.2) inset;
 }
 
 .btn-primary:active {
   transform: translateY(0);
   box-shadow: 
-    0 2px 4px -1px rgba(84, 54, 24, 0.3),
-    0 1px 2px -1px rgba(84, 54, 24, 0.2);
+    0 2px 4px -1px rgba(219, 80, 121, 0.3),
+    0 1px 2px -1px rgba(219, 80, 121, 0.2);
 }
 
 .btn-secondary {
-  border: 2px solid #543618;
-  color: #543618;
+  border: 2px solid #DB5079;
+  color: #DB5079;
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 2px 4px -1px rgba(84, 54, 24, 0.1),
-    0 0 0 1px rgba(84, 54, 24, 0.05) inset;
+    0 2px 4px -1px rgba(219, 80, 121, 0.1),
+    0 0 0 1px rgba(219, 80, 121, 0.05) inset;
 }
 
 .btn-secondary:hover {
-  background: rgba(84, 54, 24, 0.08);
-  border-color: #543618;
+  background: rgba(219, 80, 121, 0.08);
+  border-color: #DB5079;
   transform: translateY(-2px);
   box-shadow: 
-    0 4px 6px -1px rgba(84, 54, 24, 0.15),
-    0 2px 4px -1px rgba(84, 54, 24, 0.1),
-    0 0 0 1px rgba(84, 54, 24, 0.1) inset;
+    0 4px 6px -1px rgba(219, 80, 121, 0.15),
+    0 2px 4px -1px rgba(219, 80, 121, 0.1),
+    0 0 0 1px rgba(219, 80, 121, 0.1) inset;
 }
 
 .btn-secondary:active {

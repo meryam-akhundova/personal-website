@@ -11,7 +11,7 @@ export default function About() {
     <section
       id="about"
       className="min-h-screen py-20 px-1 sm:px-2 lg:px-4 relative overflow-hidden"
-      style={{ backgroundColor: 'rgba(180, 188, 177, 0.3)' }}
+      style={{ backgroundColor: '#FFE5D4' }}
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-white/50"></div>
       <div className="max-w-6xl mr-auto ml-0 relative z-10 pl-12 sm:pl-16 lg:pl-20">
@@ -26,13 +26,13 @@ export default function About() {
           <ScrollAnimation delay={100}>
             <div className="glass-card rounded-2xl p-8 sm:p-12">
               <p className="text-lg mb-6 leading-relaxed" style={{ color: '#543618' }}>
-                text
+                hello! i'm a first-year software engineering student at the university of waterloo.
               </p>
               <p className="text-lg mb-6 leading-relaxed" style={{ color: '#543618' }}>
-                text
+                i'm currently searching for co-op opportunities for the summer of 2026.
               </p>
               <p className="text-lg leading-relaxed" style={{ color: '#543618' }}>
-                text
+                i have experience in full-stack development and am looking to explore various fields of software engineering!
               </p>
             </div>
           </ScrollAnimation>

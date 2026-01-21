@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ImageCarousel from "@/components/ImageCarousel";
 import { projects } from "@/lib/data";
 
 export async function generateStaticParams() {
@@ -49,16 +49,12 @@ export default async function ProjectDetailPage({
                     </Link>
 
                     <div className="glass-card rounded-3xl overflow-hidden">
-                        {project.imageUrl && (
-                            <div className="relative h-64 sm:h-96 w-full overflow-hidden">
-                                <Image
-                                    src={project.imageUrl}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                        )}
+                        {(project.images && project.images.length > 0) || project.imageUrl ? (
+                            <ImageCarousel
+                                images={project.images || (project.imageUrl ? [project.imageUrl] : [])}
+                                alt={project.title}
+                            />
+                        ) : null}
 
                         <div className="p-8 sm:p-12">
                             <h1 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: '#543618' }}>

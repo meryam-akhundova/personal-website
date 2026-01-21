@@ -9,7 +9,7 @@ export default function Experience() {
     <section
       id="experience"
       className="min-h-screen py-20 px-1 sm:px-2 lg:px-4 relative overflow-hidden"
-      style={{ backgroundColor: 'rgba(236, 218, 154, 0.3)' }}
+      style={{ backgroundColor: '#FFEAA7' }}
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-white/50"></div>
       <div className="max-w-4xl mr-auto ml-0 relative z-10 pl-12 sm:pl-16 lg:pl-20">
@@ -18,7 +18,7 @@ export default function Experience() {
             experience
           </h2>
           <p className="text-lg text-left mb-12 max-w-2xl lowercase leading-relaxed" style={{ color: '#543618' }}>
-            text
+            here are my work experiences to date!
           </p>
         </ScrollAnimation>
 

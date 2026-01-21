@@ -23,16 +23,16 @@ export default function Projects() {
     <section
       id="projects"
       className="min-h-screen py-20 px-1 sm:px-2 lg:px-4 relative overflow-hidden"
-      style={{ backgroundColor: 'rgba(219, 185, 173, 0.3)' }}
+      style={{ backgroundColor: '#FFD6E8' }}
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-white/50"></div>
       <div className="max-w-4xl mr-auto ml-0 mb-12 relative z-10 pl-12 sm:pl-16 lg:pl-20">
         <ScrollAnimation>
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-left" style={{ color: '#543618' }}>
-            featured projects
+            projects
           </h2>
           <p className="text-lg text-left mb-12 max-w-2xl lowercase leading-relaxed" style={{ color: '#543618' }}>
-            text
+            here are some of my personal, academic, and hackathon projects!
           </p>
         </ScrollAnimation>
       </div>
@@ -91,9 +91,9 @@ export default function Projects() {
                     style={{ transformOrigin: 'center center' }}
                   >
                     <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-                      {project.imageUrl ? (
+                      {(project.images && project.images.length > 0) || project.imageUrl ? (
                         <Image
-                          src={project.imageUrl}
+                          src={project.images?.[0] || project.imageUrl || ""}
                           alt={project.title}
                           fill
                           className="object-cover group-hover:scale-110 transition-transform duration-300 grayscale"

@@ -9,7 +9,6 @@ export default function Hero() {
     <section
       id="home"
       className="min-h-screen flex items-center justify-center px-1 sm:px-2 lg:px-4 pt-16 relative overflow-hidden"
-      style={{ backgroundColor: 'rgba(252, 234, 202, 0.2)' }}
     >
       {/* Doodles - Mixed stars and code icons, spread out across the section */}
       <div className="absolute top-8 left-6 opacity-25 animate-bounce" style={{ animationDuration: '3s' }}>
@@ -48,7 +47,7 @@ export default function Hero() {
       <div className="absolute bottom-52 left-1/3 opacity-25 animate-bounce" style={{ animationDuration: '3.3s', animationDelay: '1.3s' }}>
         <StarDoodle className="w-8 h-8" style={{ color: '#DB5079' }} />
       </div>
-      
+
       <div className="absolute bottom-0 left-0 right-0 h-px bg-white/50"></div>
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <div className="mb-8 glass-card rounded-3xl px-8 sm:px-12 py-8 sm:py-8">
@@ -59,7 +58,7 @@ export default function Hero() {
             meryam akhundova
           </h1>
           <p className="text-xl sm:text-2xl mb-8" style={{ color: '#543618' }}>
-            <TypingText text="software engineering @ university of waterloo" speed={80} />
+            <TypingText text="software engineering student @ university of waterloo" speed={80} />
           </p>
         </div>
 
@@ -80,11 +79,11 @@ export default function Hero() {
 
         <div className="mt-16 flex justify-center space-x-6">
           <a
-            href="https://github.com"
+            href="https://github.com/meryam-akhundova"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:scale-110 transform transition-transform"
-            style={{ color: '#DB5079' }}
+            style={{ color: '#543618' }}
             aria-label="GitHub"
           >
             <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -92,11 +91,11 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/meryam-akhundova"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:scale-110 transform transition-transform"
-            style={{ color: '#DB5079' }}
+            style={{ color: '#543618' }}
             aria-label="LinkedIn"
           >
             <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
@@ -104,9 +103,9 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="mailto:email@example.com"
+            href="mailto:makhundo@uwaterloo.ca"
             className="transition-colors hover:scale-110 transform transition-transform"
-            style={{ color: '#DB5079' }}
+            style={{ color: '#543618' }}
             aria-label="Email"
           >
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
