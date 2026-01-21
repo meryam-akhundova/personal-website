@@ -150,6 +150,6 @@ export const skills = {
 
 export const socialLinks = {
   github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/meryamakhundova",
+  linkedin: "https://www.linkedin.com/in/meryam-akhundova/",
   email: "makhundo@uwaterloo.ca",
 };
