@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ImageCarousel from "@/components/ImageCarousel";
+import MobileCarousel from "@/components/MobileCarousel";
 import { projects } from "@/lib/data";
 
 export async function generateStaticParams() {
@@ -50,20 +51,24 @@ export default async function ProjectDetailPage({
 
                     <div className="glass-card rounded-3xl overflow-hidden">
                         {(project.images && project.images.length > 0) || project.imageUrl ? (
-                            <ImageCarousel
-                                images={project.images || (project.imageUrl ? [project.imageUrl] : [])}
-                                alt={project.title}
-                            />
+                            (project.id === "project-1" || project.id === "project-3" || project.id === "project-4") ? (
+                                <MobileCarousel
+                                    images={project.images || (project.imageUrl ? [project.imageUrl] : [])}
+                                    alt={project.title}
+                                />
+                            ) : (
+                                <ImageCarousel
+                                    images={project.images || (project.imageUrl ? [project.imageUrl] : [])}
+                                    alt={project.title}
+                                    projectId={project.id}
+                                />
+                            )
                         ) : null}
 
                         <div className="p-8 sm:p-12">
                             <h1 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: '#543618' }}>
                                 {project.title}
                             </h1>
-
-                            <p className="text-xl mb-8 leading-relaxed" style={{ color: '#543618' }}>
-                                {project.description}
-                            </p>
 
                             {project.longDescription && (
                                 <div className="mb-8">
@@ -94,7 +99,8 @@ export default async function ProjectDetailPage({
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4">
-                                {project.githubUrl && (
+                                {/* Bluevale Buzz (project-1), Stellify (project-3), TeddyTrail (project-4), and CabbageMeet (project-2): no GitHub links */}
+                                {project.id !== "project-1" && project.id !== "project-2" && project.id !== "project-3" && project.id !== "project-4" && project.githubUrl && (
                                     <a
                                         href={project.githubUrl}
                                         target="_blank"
@@ -111,7 +117,13 @@ export default async function ProjectDetailPage({
                                         view code
                                     </a>
                                 )}
-                                {project.liveUrl && (
+                                {/* Fitspo (project-5): keep github, remove live demo */}
+                                {/* Bluevale Buzz (project-1) and Stellify (project-3): no links */}
+                                {/* BerryBlitz (project-6): no live demo */}
+                                {/* TeddyTrail (project-4): "devpost" instead of "live demo" */}
+                                {/* CabbageMeet (project-2): "video demo" instead of "live demo" */}
+                                {/* Other projects: show live demo if available */}
+                                {project.id !== "project-1" && project.id !== "project-3" && project.id !== "project-5" && project.id !== "project-6" && project.liveUrl && (
                                     <a
                                         href={project.liveUrl}
                                         target="_blank"
@@ -131,7 +143,7 @@ export default async function ProjectDetailPage({
                                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                                             />
                                         </svg>
-                                        live demo
+                                        {project.id === "project-4" ? "devpost" : project.id === "project-2" ? "video demo" : "live demo"}
                                     </a>
                                 )}
                             </div>
