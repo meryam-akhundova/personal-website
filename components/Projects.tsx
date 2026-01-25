@@ -5,9 +5,18 @@ import Link from "next/link";
 import { projects } from "@/lib/data";
 import { useRef } from "react";
 import ScrollAnimation from "./ScrollAnimation";
+import { useClickSparkles, ClickSparkles } from "./ClickSparkles";
 
 export default function Projects() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { sparkles, createSparkles } = useClickSparkles();
+
+  const handleCardClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    createSparkles(x, y);
+  };
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -23,17 +32,46 @@ export default function Projects() {
     <section
       id="projects"
       className="min-h-screen py-20 px-1 sm:px-2 lg:px-4 relative overflow-hidden"
-      style={{ backgroundColor: '#FFD6E8' }}
+      data-parallax="true"
     >
+      <div 
+        className="absolute inset-0 overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255, 229, 212, 0.4) 0%, rgba(255, 229, 212, 0.3) 100%)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+        }}
+      >
+        {/* Animated glossy shine - smoother gradient */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 100%)',
+            backgroundSize: '300% 100%',
+            animation: 'shimmer 10s ease-in-out infinite',
+            transform: 'skewX(-20deg)',
+            filter: 'blur(20px)',
+            WebkitFilter: 'blur(20px)',
+          }}
+        />
+        {/* Subtle animated gradient overlay */}
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            background: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%)',
+            animation: 'pulse 8s ease-in-out infinite',
+            filter: 'blur(30px)',
+            WebkitFilter: 'blur(30px)',
+          }}
+        />
+      </div>
+      <ClickSparkles sparkles={sparkles} />
       <div className="absolute top-0 left-0 right-0 h-px bg-white/50"></div>
       <div className="max-w-4xl mr-auto ml-0 mb-12 relative z-10 pl-12 sm:pl-16 lg:pl-20">
         <ScrollAnimation>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-left" style={{ color: '#543618' }}>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-left" style={{ color: '#543618' }}>
             projects
           </h2>
-          <p className="text-lg text-left mb-12 max-w-2xl lowercase leading-relaxed" style={{ color: '#543618' }}>
-            here are some of my personal, academic, and hackathon projects!
-          </p>
         </ScrollAnimation>
       </div>
 
@@ -87,16 +125,17 @@ export default function Projects() {
                   <Link
                     key={project.id}
                     href={`/projects/${project.id}`}
-                    className="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 group block flex-shrink-0 w-80 transform-gpu"
+                    onClick={handleCardClick}
+                    className="glass-card rounded-2xl overflow-hidden hover:scale-[1.05] hover:shadow-2xl transition-all duration-300 group block flex-shrink-0 w-80 transform-gpu"
                     style={{ transformOrigin: 'center center' }}
                   >
-                    <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                    <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 group-hover:brightness-110 transition-all duration-300">
                       {(project.images && project.images.length > 0) || project.imageUrl ? (
                         <Image
                           src={project.images?.[0] || project.imageUrl || ""}
                           alt={project.title}
                           fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-300 grayscale"
+                          className="object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-white/30">

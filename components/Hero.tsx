@@ -3,13 +3,25 @@
 import Link from "next/link";
 import TypingText from "./TypingText";
 import { StarDoodle, CodeDoodle } from "./Doodles";
+import Sparkles from "./Sparkles";
+import { useClickSparkles, ClickSparkles } from "./ClickSparkles";
 
 export default function Hero() {
+  const { sparkles, createSparkles } = useClickSparkles();
+
+  const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    createSparkles(x, y);
+  };
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-1 sm:px-2 lg:px-4 pt-16 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-1 sm:px-2 lg:px-4 pt-16 pb-12 sm:pb-16 relative overflow-hidden"
     >
+      <ClickSparkles sparkles={sparkles} />
       {/* Doodles - Mixed stars and code icons, spread out across the section */}
       <div className="absolute top-8 left-6 opacity-25 animate-bounce" style={{ animationDuration: '3s' }}>
         <CodeDoodle className="w-6 h-6" style={{ color: '#DB5079' }} />
@@ -49,8 +61,9 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-white/50"></div>
+      <Sparkles />
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="mb-8 glass-card rounded-3xl px-8 sm:px-12 py-8 sm:py-8">
+        <div className="mt-8 sm:mt-12 mb-8 glass-card rounded-3xl px-8 sm:px-12 py-8 sm:py-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6" style={{ color: '#543618' }}>
             hi, i&apos;m
           </h1>
@@ -62,27 +75,30 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="#projects"
-            className="px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl glass btn-primary"
-          >
-            view my work
-          </Link>
-          <Link
-            href="#contact"
-            className="px-8 py-3 border-2 rounded-lg font-semibold transition-colors glass btn-secondary"
-          >
-            get in touch
-          </Link>
-        </div>
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="#projects"
+              onClick={handleButtonClick}
+              className="px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl glass btn-primary"
+            >
+              view my work
+            </Link>
+            <Link
+              href="#contact"
+              onClick={handleButtonClick}
+              className="px-8 py-3 border-2 rounded-lg font-semibold transition-colors glass btn-secondary"
+            >
+              get in touch
+            </Link>
+          </div>
 
-        <div className="mt-16 flex justify-center space-x-6">
+          <div className="mt-16 mb-12 sm:mb-16 flex items-center justify-center gap-6">
           <a
             href="https://github.com/meryam-akhundova"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:scale-110 transform transition-transform"
+            className="flex items-center justify-center transition-colors hover:scale-110 transform transition-transform"
             style={{ color: '#543618' }}
             aria-label="GitHub"
           >
@@ -94,7 +110,7 @@ export default function Hero() {
             href="https://linkedin.com/meryam-akhundova"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:scale-110 transform transition-transform"
+            className="flex items-center justify-center transition-colors hover:scale-110 transform transition-transform"
             style={{ color: '#543618' }}
             aria-label="LinkedIn"
           >
@@ -104,7 +120,7 @@ export default function Hero() {
           </a>
           <a
             href="mailto:makhundo@uwaterloo.ca"
-            className="transition-colors hover:scale-110 transform transition-transform"
+            className="flex items-center justify-center transition-colors hover:scale-110 transform transition-transform"
             style={{ color: '#543618' }}
             aria-label="Email"
           >
@@ -112,6 +128,7 @@ export default function Hero() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </a>
+          </div>
         </div>
       </div>
     </section>

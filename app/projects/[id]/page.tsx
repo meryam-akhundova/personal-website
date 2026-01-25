@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import ImageCarousel from "@/components/ImageCarousel";
 import MobileCarousel from "@/components/MobileCarousel";
 import { projects } from "@/lib/data";
@@ -99,8 +98,8 @@ export default async function ProjectDetailPage({
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4">
-                                {/* Bluevale Buzz (project-1), Stellify (project-3), TeddyTrail (project-4), and CabbageMeet (project-2): no GitHub links */}
-                                {project.id !== "project-1" && project.id !== "project-2" && project.id !== "project-3" && project.id !== "project-4" && project.githubUrl && (
+                                {/* Bluevale Buzz (project-1), Stellify (project-3), and TeddyTrail (project-4): no GitHub links */}
+                                {project.id !== "project-1" && project.id !== "project-3" && project.id !== "project-4" && project.githubUrl && (
                                     <a
                                         href={project.githubUrl}
                                         target="_blank"
@@ -121,7 +120,7 @@ export default async function ProjectDetailPage({
                                 {/* Bluevale Buzz (project-1) and Stellify (project-3): no links */}
                                 {/* BerryBlitz (project-6): no live demo */}
                                 {/* TeddyTrail (project-4): "devpost" instead of "live demo" */}
-                                {/* CabbageMeet (project-2): "video demo" instead of "live demo" */}
+                                {/* CabbageMeet (project-2): "website" instead of "live demo" */}
                                 {/* Other projects: show live demo if available */}
                                 {project.id !== "project-1" && project.id !== "project-3" && project.id !== "project-5" && project.id !== "project-6" && project.liveUrl && (
                                     <a
@@ -143,7 +142,7 @@ export default async function ProjectDetailPage({
                                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                                             />
                                         </svg>
-                                        {project.id === "project-4" ? "devpost" : project.id === "project-2" ? "video demo" : "live demo"}
+                                        {project.id === "project-4" ? "devpost" : project.id === "project-2" ? "view site" : "live demo"}
                                     </a>
                                 )}
                             </div>
@@ -151,7 +150,6 @@ export default async function ProjectDetailPage({
                     </div>
                 </div>
             </div>
-            <Footer />
         </main>
     );
 }

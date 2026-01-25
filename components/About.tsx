@@ -2,6 +2,7 @@
 
 import { skills } from "@/lib/data";
 import ScrollAnimation from "./ScrollAnimation";
+import ParallaxSection from "./ParallaxSection";
 
 export default function About() {
   // Flatten all skills into a single array
@@ -11,10 +12,41 @@ export default function About() {
     <section
       id="about"
       className="min-h-screen py-20 px-1 sm:px-2 lg:px-4 relative overflow-hidden"
-      style={{ backgroundColor: '#FFE5D4' }}
     >
+      <div 
+        className="absolute inset-0 overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255, 229, 212, 0.4) 0%, rgba(255, 229, 212, 0.3) 100%)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+        }}
+      >
+        {/* Animated glossy shine - smoother gradient */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.15) 25%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 100%)',
+            backgroundSize: '300% 100%',
+            animation: 'shimmer 10s ease-in-out infinite',
+            transform: 'skewX(-20deg)',
+            filter: 'blur(20px)',
+            WebkitFilter: 'blur(20px)',
+          }}
+        />
+        {/* Subtle animated gradient overlay */}
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            background: 'radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 60%)',
+            animation: 'pulse 8s ease-in-out infinite',
+            filter: 'blur(30px)',
+            WebkitFilter: 'blur(30px)',
+          }}
+        />
+      </div>
       <div className="absolute top-0 left-0 right-0 h-px bg-white/50"></div>
-      <div className="max-w-6xl mr-auto ml-0 relative z-10 pl-12 sm:pl-16 lg:pl-20">
+      <ParallaxSection speed={0.3}>
+        <div className="max-w-6xl mr-auto ml-0 relative z-10 pl-12 sm:pl-16 lg:pl-20">
         <ScrollAnimation>
           <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-left" style={{ color: '#543618' }}>
             about me
@@ -57,7 +89,8 @@ export default function About() {
             </div>
           </ScrollAnimation>
         </div>
-      </div>
+        </div>
+      </ParallaxSection>
     </section>
   );
 }

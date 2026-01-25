@@ -51,8 +51,9 @@ export const projects: Project[] = [
     technologies: ["Python", "SQL", "Flask"],
     images: [
     ],
-    githubUrl: "https://github.com/yourusername/project2",
-    liveUrl: "https://drive.google.com/file/d/10n9WgGjYo6LL6i7PoOPROSVUty92hm4U/view?usp=sharing",
+    githubUrl: "https://github.com/meryam-akhundova/cabbage-meet",
+    // liveUrl: "https://drive.google.com/file/d/10n9WgGjYo6LL6i7PoOPROSVUty92hm4U/view?usp=sharing",
+    liveUrl: "https://cabbage-meet.vercel.app/",
     featured: true,
   },
   {
