@@ -343,3 +343,23 @@ Link {
     opacity: 0.35;
   }
 }
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6),
+                0 0 12px 3px rgba(255, 255, 255, 0.4),
+                0 0 16px 4px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 12px 3px rgba(255, 255, 255, 0.9),
+                0 0 18px 4px rgba(255, 255, 255, 0.6),
+                0 0 24px 5px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.section-divider {
+  animation: glow 3s ease-in-out infinite;
+  z-index: 20;
+  margin: 0;
+  padding: 0;
+}

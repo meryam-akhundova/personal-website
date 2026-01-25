@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-1 sm:px-2 lg:px-4 pt-16 pb-12 sm:pb-16 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-1 sm:px-2 lg:px-4 relative overflow-hidden"
     >
       <ClickSparkles sparkles={sparkles} />
       {/* Doodles - Mixed stars and code icons, spread out across the section */}
@@ -60,10 +60,10 @@ export default function Hero() {
         <StarDoodle className="w-8 h-8" style={{ color: '#DB5079' }} />
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/50"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/50 section-divider"></div>
       <Sparkles />
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="mt-8 sm:mt-12 mb-8 glass-card rounded-3xl px-8 sm:px-12 py-8 sm:py-8">
+        <div className="mb-8 glass-card rounded-3xl px-8 sm:px-12 py-8 sm:py-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6" style={{ color: '#543618' }}>
             hi, i&apos;m
           </h1>
@@ -93,7 +93,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="mt-16 mb-12 sm:mb-16 flex items-center justify-center gap-6">
+          <div className="mt-16 flex items-center justify-center gap-6">
           <a
             href="https://github.com/meryam-akhundova"
             target="_blank"

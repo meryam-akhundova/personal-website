@@ -17,6 +17,7 @@ export default function Experience() {
           background: 'linear-gradient(135deg, rgba(255, 229, 212, 0.4) 0%, rgba(255, 229, 212, 0.3) 100%)',
           backdropFilter: 'blur(8px)',
           WebkitBackdropFilter: 'blur(8px)',
+          zIndex: 0,
         }}
       >
         {/* Animated glossy shine - smoother gradient */}
@@ -42,7 +43,7 @@ export default function Experience() {
           }}
         />
       </div>
-      <div className="absolute top-0 left-0 right-0 h-px bg-white/50"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-white/50 section-divider"></div>
       <ParallaxSection speed={0.3}>
         <div className="max-w-4xl mr-auto ml-0 relative z-10 pl-12 sm:pl-16 lg:pl-20">
         <ScrollAnimation>

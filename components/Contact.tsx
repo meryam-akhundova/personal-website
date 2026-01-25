@@ -46,7 +46,7 @@ export default function Contact() {
       id="contact"
       className="min-h-screen py-20 px-2 sm:px-4 lg:px-6 flex items-center relative overflow-hidden"
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-white/50"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-white/50 section-divider"></div>
       <div className="max-w-4xl mx-auto w-full text-center relative z-10">
         <ScrollAnimation>
           <h2 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: '#543618' }}>
