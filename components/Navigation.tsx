@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navItems = [
-  { name: "home", href: "/#home" },
-  { name: "about", href: "/#about" },
-  { name: "projects", href: "/#projects" },
-  { name: "experience", href: "/#experience" },
-  { name: "contact", href: "/#contact" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navigation() {
@@ -25,29 +25,36 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 hover:backdrop-blur-xl ${isScrolled
-        ? "glass-strong-opaque"
-        : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "glass-card shadow-sm" : "bg-transparent"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-end items-center h-16">
-          {/* Desktop Navigation */}
+        <div className="flex justify-between items-center h-16">
+          <Link
+            href="#home"
+            className="text-xl font-bold transition-colors"
+            style={{ color: '#DB5079' }}
+          >
+            Meryam Akhundova
+          </Link>
+
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-brown-moss hover:text-[#DB5079] font-medium transition-all hover:scale-110"
+                className="font-medium transition-colors hover:opacity-70"
+                style={{ color: '#543618' }}
               >
                 {item.name}
               </Link>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-brown-moss"
+            className="md:hidden"
+            style={{ color: '#543618' }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -69,14 +76,14 @@ export default function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2 glass rounded-lg mt-2 p-4">
+          <div className="md:hidden pb-4 space-y-2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-brown-moss hover:text-[#DB5079] transition-colors"
+                className="block py-2 transition-colors hover:opacity-70"
+                style={{ color: '#543618' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}

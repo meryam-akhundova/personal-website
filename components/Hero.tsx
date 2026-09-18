@@ -1,67 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import TypingText from "./TypingText";
-import { StarDoodle, CodeDoodle } from "./Doodles";
-import Sparkles from "./Sparkles";
-import { useClickSparkles, ClickSparkles } from "./ClickSparkles";
+import { socialLinks } from "@/lib/data";
 
 export default function Hero() {
-  const { sparkles, createSparkles } = useClickSparkles();
-
-  const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = rect.left + rect.width / 2;
-    const y = rect.top + rect.height / 2;
-    createSparkles(x, y);
-  };
-
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center px-1 sm:px-2 lg:px-4 relative overflow-hidden"
     >
-      <ClickSparkles sparkles={sparkles} />
-      {/* Doodles - Mixed stars and code icons, spread out across the section */}
-      <div className="absolute top-8 left-6 opacity-25 animate-bounce" style={{ animationDuration: '3s' }}>
-        <CodeDoodle className="w-6 h-6" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute top-20 right-12 opacity-25 animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>
-        <StarDoodle className="w-7 h-7" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute top-36 left-16 opacity-25 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
-        <StarDoodle className="w-5 h-5" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute top-52 right-20 opacity-25 animate-bounce" style={{ animationDuration: '3.2s', animationDelay: '0.8s' }}>
-        <CodeDoodle className="w-8 h-8" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute top-68 left-24 opacity-25 animate-bounce" style={{ animationDuration: '3.8s', animationDelay: '0.3s' }}>
-        <CodeDoodle className="w-6 h-6" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute bottom-28 left-8 opacity-25 animate-bounce" style={{ animationDuration: '3.6s', animationDelay: '1.2s' }}>
-        <StarDoodle className="w-9 h-9" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute bottom-44 right-16 opacity-25 animate-bounce" style={{ animationDuration: '4.2s', animationDelay: '0.6s' }}>
-        <StarDoodle className="w-7 h-7" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute bottom-60 left-20 opacity-25 animate-bounce" style={{ animationDuration: '3.4s', animationDelay: '0.9s' }}>
-        <CodeDoodle className="w-5 h-5" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute top-44 left-1/4 opacity-25 animate-bounce" style={{ animationDuration: '3.7s', animationDelay: '1.1s' }}>
-        <StarDoodle className="w-6 h-6" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute bottom-36 right-1/3 opacity-25 animate-bounce" style={{ animationDuration: '3.9s', animationDelay: '0.4s' }}>
-        <CodeDoodle className="w-7 h-7" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute top-28 right-1/4 opacity-25 animate-bounce" style={{ animationDuration: '4.1s', animationDelay: '0.7s' }}>
-        <CodeDoodle className="w-5 h-5" style={{ color: '#DB5079' }} />
-      </div>
-      <div className="absolute bottom-52 left-1/3 opacity-25 animate-bounce" style={{ animationDuration: '3.3s', animationDelay: '1.3s' }}>
-        <StarDoodle className="w-8 h-8" style={{ color: '#DB5079' }} />
-      </div>
-
       <div className="absolute bottom-0 left-0 right-0 h-px bg-white/50 section-divider"></div>
-      <Sparkles />
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <div className="mb-8 glass-card rounded-3xl px-8 sm:px-12 py-8 sm:py-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6" style={{ color: '#543618' }}>
@@ -71,7 +19,7 @@ export default function Hero() {
             meryam akhundova
           </h1>
           <p className="text-xl sm:text-2xl mb-8" style={{ color: '#543618' }}>
-            <TypingText text="software engineering student @ university of waterloo" speed={80} />
+            software engineering student @ university of waterloo
           </p>
         </div>
 
@@ -79,14 +27,12 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="#projects"
-              onClick={handleButtonClick}
               className="px-8 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl glass btn-primary"
             >
               view my work
             </Link>
             <Link
               href="#contact"
-              onClick={handleButtonClick}
               className="px-8 py-3 border-2 rounded-lg font-semibold transition-colors glass btn-secondary"
             >
               get in touch
@@ -95,7 +41,7 @@ export default function Hero() {
 
           <div className="mt-16 flex items-center justify-center gap-6">
           <a
-            href="https://github.com/meryam-akhundova"
+            href={socialLinks.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center transition-colors hover:scale-110 transform transition-transform"
@@ -107,7 +53,7 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/meryam-akhundova"
+            href={socialLinks.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center transition-colors hover:scale-110 transform transition-transform"
@@ -119,7 +65,7 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="mailto:makhundo@uwaterloo.ca"
+            href={socialLinks.email}
             className="flex items-center justify-center transition-colors hover:scale-110 transform transition-transform"
             style={{ color: '#543618' }}
             aria-label="Email"

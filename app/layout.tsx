@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/CustomCursor";
-import CursorTrail from "@/components/CursorTrail";
-import GlobalClickSparkles from "@/components/GlobalClickSparkles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Meryam Akhundova | Software Engineering Student",
-  description: "Portfolio of Meryam Akhundova - First Year Software Engineering Student at University of Waterloo",
+  description: "Portfolio of Meryam Akhundova — second-year Software Engineering student at the University of Waterloo",
 };
 
 export default function RootLayout({
@@ -26,14 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" style={{ cursor: "none" }}>
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ cursor: "none" }}
       >
-        <CustomCursor />
-        <CursorTrail />
-        <GlobalClickSparkles />
         {children}
       </body>
     </html>
